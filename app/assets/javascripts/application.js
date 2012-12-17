@@ -12,4 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
+//= require jquery.json-2.3.min
+//= require uuid
+//= require underscore
+//= require sugar-1.3.min
+//= require handlebars-1.0.rc.1
+//= require YouAreDaBomb
+//= require YouAreDaChef
+//= require utils
 //= require_tree .
