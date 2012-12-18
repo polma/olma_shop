@@ -9,6 +9,10 @@ class @UseCase
   showCategory: (id) ->
   showProduct: (id) ->
 
+  showContact: ->
+  showTerms: ->
+  showMain: ->
+
   addProductToCart: (id) ->
   searchForProducts: () ->
 

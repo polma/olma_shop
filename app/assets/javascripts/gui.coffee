@@ -14,6 +14,13 @@ class @Gui
     @showAlert('Wybrałeś kategorię: ' + id)
     $("#content-h2").html(id)
 
+  showContact: =>
+    $("#content-h2").html("Kontakt do nas")
+  showTerms: =>
+    $("#content-h2").html("Regulamin sklepu")
+  showMain: =>
+    $("#content-h2").empty()
+
   showAlert: (notice_text) =>
     template = @getTemplate("#alert-template")
     $("#alert").empty()
