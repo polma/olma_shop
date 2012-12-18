@@ -21,4 +21,10 @@
 //= require YouAreDaBomb
 //= require YouAreDaChef
 //= require utils
+//= require models
+//= require use_case
+//= require server_storage
+//= require gui
+//= require glue
+//= require shop
 //= require_tree .
