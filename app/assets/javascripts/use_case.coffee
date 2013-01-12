@@ -7,6 +7,8 @@ class @UseCase
   
   showCategories: ->
   showCategory: (id) ->
+
+  showProducts: ->
   showProduct: (id) ->
 
   showContact: ->

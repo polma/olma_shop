@@ -6,5 +6,6 @@ class @Shop
     gui = new Gui()
     glue = new Glue(useCase, gui, serverStorage)
     useCase.showCategories()
+    useCase.showProducts()
 
 $(-> new Shop())

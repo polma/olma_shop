@@ -13,3 +13,4 @@
  *= require bootstrap-responsive
  *= require_tree .
  */
+div.product {font-size:20px; border:2px solid black; margin:3px; padding:2px;  float:left; width:200px; height:250px;}
