@@ -27,6 +27,9 @@ class @Gui
   showCart: ->
     $("#main-content").html("<h2>Zawartość Twojego koszyka</h2>")
     template = @getTemplate("#cart-list-template")
+    if useCase.cart.length == 0
+      @showAlert("Twój koszyk jest pusty.")
+      return
     for p in useCase.cart
       $("#main-content").append(template(p))
 
@@ -56,4 +59,5 @@ class @Gui
     template = @getTemplate("#alert-template")
     $("#alert").empty()
     $("#alert").html(template(notice_text))
+    $("#alert").hide(5000)
 
