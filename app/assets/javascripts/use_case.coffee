@@ -16,7 +16,12 @@ class @UseCase
   showMain: ->
 
   addProductToCart: (id) ->
-  searchForProducts: () ->
+  searchForProducts: (text) ->
+    if text==''
+      @search_results = []
+    else
+      regexp = new RegExp(text, "i")
+      @search_results = @products.filter (p) -> (p.name.search(regexp) != -1 or p.description.search(regexp) != -1)
 
   findProduct: (id) ->
     for p in @products

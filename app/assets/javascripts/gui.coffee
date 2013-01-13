@@ -16,6 +16,12 @@ class @Gui
     for p in useCase.findProductsForCategory(id)
       $("#content-h2").append(template(p))
 
+  showSearchResults: ->
+    $("#content-h2").empty()
+    template = @getTemplate("#products-list-template")
+    for p in useCase.search_results
+      $("#content-h2").append(template(p))
+
   showContact: =>
     $("#content-h2").html("Kontakt do nas")
   showTerms: =>
