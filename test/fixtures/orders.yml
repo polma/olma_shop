@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  customer_id: 1
+  confirmed: false
+  sent: false
+  custom_shipping_address: false
+
+two:
+  customer_id: 1
+  confirmed: false
+  sent: false
+  custom_shipping_address: false
