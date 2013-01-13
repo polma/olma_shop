@@ -26,7 +26,7 @@ class @UseCase
   addProductToCart: (id) ->
     @cart.push @findProduct(id)
   deleteProductFromCart: (id) ->
-    @cart.remove(@findProduct(id))
+    @cart.splice($.inArray(@findProduct(id), @cart), 1)
 
   searchForProducts: (text) ->
     if text==''
