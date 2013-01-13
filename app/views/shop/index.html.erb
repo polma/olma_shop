@@ -29,9 +29,16 @@
   <p>Cena: {{this.price}} PLN.</p>
   <br />
   <br />
-  <button id="button-add-to-cart" class="btn btn-primary" onclick="useCase.addToCart({{this.id}})">Dodaj do koszyka</button>
+  <button id="button-add-to-cart" class="btn btn-primary" onclick="useCase.addProductToCart({{this.id}})">Dodaj do koszyka</button>
 </div>
 <div class="span4">
   GALERIA
 </div>
+</script>
+<script type='text/x-handlebars-template' id='cart-list-template'>
+  <div class="span3">{{this.name}}</div>
+  <div class="span6"><button id="button-delete-from-cart" class="btn btn-danger" onclick="useCase.deleteProductFromCart({{this.id}})">Usuń z koszyka</button></div>
+</script>
+<script type='text/x-handlebars-template' id='cart-min-template'>
+Wartość koszyka: {{ this }} PLN. <button onClick="useCase.showCart()" class="btn btn-info">Zobacz koszyk</button>
 </script>

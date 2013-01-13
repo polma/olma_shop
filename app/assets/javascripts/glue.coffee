@@ -15,6 +15,12 @@ class @Glue
     #searching
     After(@useCase, 'searchForProducts', => @gui.showSearchResults())
 
+    #showing cart
+    After(@useCase, 'showCart', => @gui.showCart())
+    After(@useCase, 'addProductToCart', (id) => @gui.showCartMin())
+    After(@useCase, 'deleteProductFromCart', (id) => @gui.showCartMin())
+    After(@useCase, 'deleteProductFromCart', (id) => @gui.showCart())
+
     #showing contact and terms of use
     After(@useCase, 'showContact', => @gui.showContact())
     After(@useCase, 'showTerms', => @gui.showTerms())

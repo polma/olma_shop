@@ -11,11 +11,23 @@ class @UseCase
   showProducts: ->
   showProduct: (id) ->
 
+  showCart: ->
+  cartSum: =>
+    sum = 0.0
+    for p in @cart
+      sum += p.price
+    sum /= 100.0
+    return sum
+
   showContact: ->
   showTerms: ->
   showMain: ->
 
   addProductToCart: (id) ->
+    @cart.push @findProduct(id)
+  deleteProductFromCart: (id) ->
+    @cart.remove(@findProduct(id))
+
   searchForProducts: (text) ->
     if text==''
       @search_results = []

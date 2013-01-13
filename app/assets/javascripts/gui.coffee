@@ -24,6 +24,21 @@ class @Gui
     $("#main-content").html(template(p))
     p.price *= 100.0
 
+  showCart: ->
+    $("#main-content").html("<h2>Zawartość Twojego koszyka</h2>")
+    template = @getTemplate("#cart-list-template")
+    for p in useCase.cart
+      $("#main-content").append(template(p))
+
+
+  showCartMin: ->
+    cart_container = $("#cart-container")
+    if useCase.cart.length == 0
+      cart_container.html("")
+      return
+    template = @getTemplate("#cart-min-template")
+    cart_container.html(template(useCase.cartSum()))
+
   showSearchResults: ->
     $("#main-content").empty()
     template = @getTemplate("#products-list-template")
