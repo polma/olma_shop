@@ -11,23 +11,31 @@ class @Gui
       $("#categories-nav").append(template(c))
 
   showCategory: (id) ->
-    $("#content-h2").empty()
+    $("#main-content").empty()
     template = @getTemplate("#products-list-template")
     for p in useCase.findProductsForCategory(id)
-      $("#content-h2").append(template(p))
+      $("#main-content").append(template(p))
+
+  showProduct: (id) ->
+    $("#main-content").empty()
+    template = @getTemplate("#product-template")
+    p = useCase.findProduct(id)
+    p.price /= 100.0
+    $("#main-content").html(template(p))
+    p.price *= 100.0
 
   showSearchResults: ->
-    $("#content-h2").empty()
+    $("#main-content").empty()
     template = @getTemplate("#products-list-template")
     for p in useCase.search_results
-      $("#content-h2").append(template(p))
+      $("#main-content").append(template(p))
 
   showContact: =>
-    $("#content-h2").html("Kontakt do nas")
+    $("#main-content").html("<h2>Kontakt do nas</h2>")
   showTerms: =>
-    $("#content-h2").html("Regulamin sklepu")
+    $("#main-content").html("<h2>Regulamin sklepu</h2>")
   showMain: =>
-    $("#content-h2").empty()
+    $("#main-content").empty()
 
   showAlert: (notice_text) =>
     template = @getTemplate("#alert-template")

@@ -8,6 +8,9 @@ class @Glue
 
     #downloading products
     Before(@useCase, 'showProducts', => @serverStorage.downloadProducts())
+
+    #showing a single product
+    After(@useCase, 'showProduct', (id) => @gui.showProduct(id))
    
     #searching
     After(@useCase, 'searchForProducts', => @gui.showSearchResults())

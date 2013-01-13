@@ -14,8 +14,24 @@
 </script>
 
 <script type='text/x-handlebars-template' id='products-list-template'>
-  <div class="product">
-    {{ this.name }} <br />
-    <img style="margin-left:25px" src="http://img.szafa.pl/ubrania/0/007684116/1319057755/plaszcz-damski-jesienny-troll.jpg" width="150px" height="150px" />    
-  </div>
+  <a href="#" onclick="useCase.showProduct({{this.id}})">
+    <div class="product">
+      {{ this.name }} <br />
+      <img style="margin-left:25px" src="http://img.szafa.pl/ubrania/0/007684116/1319057755/plaszcz-damski-jesienny-troll.jpg" width="150px" height="150px" />    
+    </div>
+  </a>
+</script>
+<script type='text/x-handlebars-template' id='product-template'>
+  <div class="span5">
+  <h2>{{this.name}}</h2>
+  <p><small>{{this.description}}</small></p>
+
+  <p>Cena: {{this.price}} PLN.</p>
+  <br />
+  <br />
+  <button id="button-add-to-cart" class="btn btn-primary" onclick="useCase.addToCart({{this.id}})">Dodaj do koszyka</button>
+</div>
+<div class="span4">
+  GALERIA
+</div>
 </script>

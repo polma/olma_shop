@@ -22,13 +22,13 @@
       </div>  
     </div>
     <div class="row-fluid">
-      <div class="span12">
-        <h1 style="height:200px">Logo</h1>
+      <div style="background-color:black; text-align:center" class="span12">
+        <img src="assets/feminity-scaled.png" height="100px" />
       </div>
     </div>
     <div id="alert">
     </div>
-    <div class="row-fluid">
+    <div class="row-fluid" style="margin-top:30px">
       <div class="span2">
           <div class=" sidebar-nav">
             <ul id="categories-nav" class="nav nav-list">
@@ -37,14 +37,14 @@
             </ul>
           </div>
       </div>
-      <div class="span9">
+      <div id="main-content" class="span9">
         <h2 id="content-h2"></h2>
-        <%= yield %>
       </div>
     </div>
   </div>
 </body>
 </html>
+<%= yield %>
 
 <script>
   $("#search-form").submit(function(){
