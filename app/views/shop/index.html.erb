@@ -37,8 +37,8 @@
 </script>
 <script type='text/x-handlebars-template' id='cart-list-template'>
   <div class="span3">{{this.name}}</div>
-  <div class="span6"><button id="button-delete-from-cart" class="btn btn-danger" onclick="useCase.deleteProductFromCart({{this.id}})">Usuń z koszyka</button></div>
+  <div class="span6"><button id="button-delete-from-cart" class="btn btn-danger" onclick="useCase.deleteProductFromCart({{this.id}})"><i class="icon-remove icon-white" />Usuń z koszyka</button></div>
 </script>
 <script type='text/x-handlebars-template' id='cart-min-template'>
-Wartość koszyka: {{ this }} PLN. <button onClick="useCase.showCart()" class="btn btn-info">Zobacz koszyk</button>
+Wartość koszyka: {{ this }} PLN. <button onClick="useCase.showCart()" class="btn">Zobacz koszyk</button>
 </script>
