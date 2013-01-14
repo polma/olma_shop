@@ -21,6 +21,8 @@ class @ServerStorage
  
   addProductToCart: (id) =>
    $.post("/cart/add/"+id, -> console.log("success"))
+  deleteProductFromCart: (id) =>
+   $.post("/cart/del/"+id, -> console.log("success"))
 
   confirmCart: =>
     $.post("/cart/confirm", {address: useCase.address})

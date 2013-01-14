@@ -32,6 +32,18 @@ class CartsController < ApplicationController
       t.json { render :json => "Product added succesfully" }
     end
   end
+  def del
+    @customer = current_customer
+    @cart = get_customers_cart
+
+    product = Product.find(params[:id])
+    if not product.nil?
+      OrderItem.where("order_id = ? AND product_id = ?", @cart.id, product.id).first.delete
+    end
+    respond_to do |t|
+      t.json { render :json => "Product deleted succesfully" }
+    end
+  end
   def confirm
     @customer = current_customer
     @cart = get_customers_cart

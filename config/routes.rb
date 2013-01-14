@@ -5,5 +5,6 @@ OlmaShop::Application.routes.draw do
   resource :cart
   
   match 'cart/add/:id' => "carts#add"
+  match 'cart/del/:id' => "carts#del"
   match 'cart/confirm' => "carts#confirm"
 end
