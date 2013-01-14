@@ -13,11 +13,15 @@ class @ServerStorage
   downloadProducts: =>
     $.getJSON "/products.json", (data, status) => @saveProducts(data)
     
-  downloadCart: =>
-    $.getJSON "TODO", (data, status) => @saveCart(data)
-  
   saveCart: (json_table) =>
-    #TODO
+    console.log(json_table)
+    useCase.cart = json_table.map (product) -> new Product(product.id, product.name, product.description, product.price, product.category_id)
+  downloadCart: =>
+    $.getJSON "/cart.json", (data, status) => @saveCart(data)
+ 
+  addProductToCart: (id) =>
+   $.post("/cart/add/"+id, -> console.log("success"))
 
   confirmCart: =>
-    #TODO
+    $.post("/cart/confirm", {address: useCase.address})
+    @downloadCart()

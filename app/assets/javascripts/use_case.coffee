@@ -3,6 +3,7 @@ class @UseCase
     @categories = []
     @products = []
     @search_results = []
+    @address = []
     @cart = []
   
   showCategories: ->
@@ -12,6 +13,8 @@ class @UseCase
   showProduct: (id) ->
 
   showCart: ->
+  confirmCart: ->
+
   cartSum: =>
     sum = 0.0
     for p in @cart
@@ -27,6 +30,15 @@ class @UseCase
     @cart.push @findProduct(id)
   deleteProductFromCart: (id) ->
     @cart.splice($.inArray(@findProduct(id), @cart), 1)
+
+  getFieldText: (fieldId) ->
+    return $("#"+fieldId).val()
+  confirmDataForm: ->
+    fieldIds = ['name', 'surname', 'email', 'phone', 'street', 'house_nr', 'postal_code', 'city']
+    @address = {}
+    for field in fieldIds
+      @address[field] = @getFieldText('confirmation-'+field)
+    console.log(@address)  
 
   searchForProducts: (text) ->
     if text==''

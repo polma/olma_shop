@@ -18,8 +18,17 @@ class @Glue
     #showing cart
     After(@useCase, 'showCart', => @gui.showCart())
     After(@useCase, 'addProductToCart', (id) => @gui.showCartMin())
+    After(@serverStorage, 'saveCart', => @gui.showCartMin())
+    After(@useCase, 'addProductToCart', (id) => @serverStorage.addProductToCart(id))
     After(@useCase, 'deleteProductFromCart', (id) => @gui.showCartMin())
     After(@useCase, 'deleteProductFromCart', (id) => @gui.showCart())
+    After(@useCase, 'deleteProductFromCart', (id) => @serverStorage.deleteProductFromCart(id))
+
+    #order confirmation form
+    #After(@useCase, 'confirmCart', => @serverStorage.downloadAddress())
+    After(@useCase, 'confirmCart', => @gui.showConfirmationForm())
+    After(@useCase, 'confirmDataForm', => @serverStorage.confirmCart())
+    After(@serverStorage, 'confirmCart', => @gui.showCartConfirmed())
 
     #showing contact and terms of use
     After(@useCase, 'showContact', => @gui.showContact())

@@ -7,5 +7,6 @@ class @Shop
     glue = new Glue(useCase, gui, serverStorage)
     useCase.showCategories()
     useCase.showProducts()
+    serverStorage.downloadCart()
 
 $(-> new Shop())

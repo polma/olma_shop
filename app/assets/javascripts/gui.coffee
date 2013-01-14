@@ -32,6 +32,7 @@ class @Gui
       return
     for p in useCase.cart
       $("#main-content").append(template(p))
+    $("#main-content").append('<div class="span3" style="margin-top:20px"><button class="btn btn-success" onClick="useCase.confirmCart()">Potwierdź zamówienie</button></div>')
 
 
   showCartMin: ->
@@ -41,6 +42,14 @@ class @Gui
       return
     template = @getTemplate("#cart-min-template")
     cart_container.html(template(useCase.cartSum()))
+
+  showConfirmationForm: ->
+    template = @getTemplate("#confirmation-form-template")
+    $("#main-content").html(template)
+
+  showCartConfirmed: ->
+    $("#main-content").empty()
+    @showAlert("Zamówienie zostało przyjęte!")
 
   showSearchResults: ->
     $("#main-content").empty()

@@ -42,3 +42,26 @@
 <script type='text/x-handlebars-template' id='cart-min-template'>
   Wartość koszyka: {{ this }} PLN. <button onClick="useCase.showCart()" class="btn"><i class="icon-shopping-cart" />Zobacz koszyk</button>
 </script>
+<script type='text/x-handlebars-template' id='confirmation-form-template'>
+  <h2>Proszę podać dane</h2>
+  <div class="controls controls-row">
+    <input id="confirmation-name" class="span2" placeholder="Imię" type="text" required>
+    <input id="confirmation-surname" class="span2" placeholder="Nazwisko" type="text" required>
+  </div> 
+  <div class="controls">
+    <input id="confirmation-email" class="span4" placeholder="Email" type="email" required>
+  </div>
+  <div class="controls">
+    <input id="confirmation-phone" class="span4" placeholder="Telefon" type="text" required>
+  </div>
+  <div class="controls controls-row">
+    <input id="confirmation-street" class="span2" placeholder="Ulica" type="text">
+    <input id="confirmation-house_nr" class="span2" placeholder="Nr domu" type="text">
+  </div> 
+  <div class="controls controls-row">
+    <input id="confirmation-postal_code" class="span2" placeholder="Kod pocztowy" type="text" required>
+    <input id="confirmation-city" class="span2" placeholder="Miasto" type="text" required>
+  </div> 
+  <button class="btn btn-primary" onClick="useCase.confirmDataForm()">Potwierdź dane</button>
+
+</script>
