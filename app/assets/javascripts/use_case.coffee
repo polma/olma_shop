@@ -4,10 +4,14 @@ class @UseCase
     @products = []
     @search_results = []
     @address = []
+    @special_offers = []
+    @discounts = []
     @cart = []
   
   showCategories: ->
   showCategory: (id) ->
+
+  showSpecialOffers: ->
 
   showProducts: ->
   showProduct: (id) ->
@@ -57,3 +61,13 @@ class @UseCase
         return c
   findProductsForCategory: (id) ->
     return @products.filter (p) -> p.category_id == id
+
+  setupSpecialOffers: ->
+    console.log("discounts: " + @discounts)
+    for discount in @discounts
+      console.log("dd")
+      product = @findProduct(discount.product_id)
+      product.price *= (100-discount.percentage)/100
+      @special_offers.push product
+
+

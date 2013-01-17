@@ -7,4 +7,5 @@ OlmaShop::Application.routes.draw do
   match 'cart/add/:id' => "carts#add"
   match 'cart/del/:id' => "carts#del"
   match 'cart/confirm' => "carts#confirm"
+  match 'discounts.json' => "products#discounts"
 end

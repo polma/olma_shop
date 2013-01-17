@@ -6,9 +6,17 @@ class @Gui
     return Handlebars.compile($(templateClass).html())
 
   showCategories: =>
+    $("#categories-nav").append('<li>
+      <a href="#" onClick="useCase.showSpecialOffers()"><i>Promocje</i></a></li>')
     template = @getTemplate("#category-list-template")
     for c in useCase.categories
       $("#categories-nav").append(template(c))
+
+  showSpecialOffers: ->
+    $("#main-content").empty()
+    template = @getTemplate("#products-list-template")
+    for p in useCase.special_offers
+      $("#main-content").append(template(p))
 
   showCategory: (id) ->
     $("#main-content").empty()

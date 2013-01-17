@@ -7,6 +7,12 @@ class @ServerStorage
   downloadCategories: =>
     $.getJSON "/categories.json", (data, status) => @saveCategories(data)
 
+  saveDiscounts: (json_table) =>
+    useCase.discounts = json_table.map (discount) -> new Discount(discount.product_id, discount.percentage)
+  
+  downloadDiscounts: =>
+    $.getJSON "/discounts.json", (data, status) => @saveDiscounts(data)
+  
   saveProducts: (json_table) =>
     useCase.products = json_table.map (product) -> new Product(product.id, product.name, product.description, product.price, product.category_id)
   
