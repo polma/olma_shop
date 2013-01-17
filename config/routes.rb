@@ -1,4 +1,8 @@
 OlmaShop::Application.routes.draw do
+  devise_for :users
+
+  mount RailsAdmin::Engine => '/olma', :as => 'rails_admin'
+
   root :to => "shop#index"
   resources :products
   resources :categories
