@@ -81,7 +81,7 @@ class @Gui
     $("#main-content").html("<h2>Kontakt do nas</h2>")
   showTerms: =>
     $("#main-content").html("<h2>Regulamin sklepu</h2>")
-  showMain: =>   
+  showMain: =>
     $("#main-content").empty()
     $("#main-content").html("<h2>Ostatnio dodane produkty</h2>")
     template = @getTemplate("#products-list-template")
