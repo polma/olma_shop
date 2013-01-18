@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Dziękujemy za złożenie zamówienia</h1>
+    <p>Zamówione produkty:</p>
+    <ul>
+      <% @products.each do |p| %>
+        <li><%= p.product.name %></li>
+      <% end %>
+    </ul>
+    <p>
+      Prosimy o przelanie kwoty <%= @total_cost %> na następujące dane:
+    </p>
+    <p>
+      Feminity, ul. XXX, Miasto xxx, numer konta 4221 12 312 321 3213 21.
+    </p>
+    <p>Zapraszamy na ponowne zakupy!</p>
+  </body>
+</html>

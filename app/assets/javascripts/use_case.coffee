@@ -68,7 +68,6 @@ class @UseCase
   setupSpecialOffers: ->
     console.log("discounts: " + @discounts)
     for discount in @discounts
-      console.log("dd")
       product = @findProduct(discount.product_id)
       product.price *= (100-discount.percentage)/100
       @special_offers.push product

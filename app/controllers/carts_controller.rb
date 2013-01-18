@@ -69,5 +69,22 @@ class CartsController < ApplicationController
     respond_to do |t|
       t.json { render :json => @customer }
     end
+    
+    total_cost = 0.0
+    active_discounts = Discount.where("active = true")
+
+    @cart.order_items.each do |i|
+      discount = Discount.where("active = true and product_id = ?", i.id).first
+      if discount.nil?
+        total_cost += i.product.price
+      else
+        total_cost += (100.0-discount.percentage)/100.0 * i.product.price
+      end
+    end
+
+    total_cost /= 100.0
+
+    OrderMailer.order_email(@customer, @cart.order_items, total_cost).deliver
+
   end
 end

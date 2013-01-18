@@ -84,5 +84,5 @@ class @Gui
     template = @getTemplate("#alert-template")
     $("#alert").empty()
     $("#alert").html(template(notice_text))
-    $("#alert").hide(5000)
+    $("#alert").hide(10000)
 
