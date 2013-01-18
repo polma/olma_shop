@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
+  name: customer1
   surname: MyString
   email: MyString
   street: MyString
@@ -11,7 +11,7 @@ one:
   country: MyString
 
 two:
-  name: MyString
+  name: customer2
   surname: MyString
   email: MyString
   street: MyString

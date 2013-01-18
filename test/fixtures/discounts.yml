@@ -2,10 +2,10 @@
 
 one:
   product_id: 1
-  percentage: 1
+  percentage: 10
   active: false
 
 two:
-  product_id: 1
-  percentage: 1
-  active: false
+  product_id: 2
+  percentage: 10
+  active: true

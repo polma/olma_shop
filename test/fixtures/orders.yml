@@ -8,6 +8,6 @@ one:
 
 two:
   customer_id: 1
-  confirmed: false
+  confirmed: true
   sent: false
   custom_shipping_address: false
