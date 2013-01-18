@@ -18,9 +18,15 @@ class @ServerStorage
   
   downloadProducts: =>
     $.getJSON "/products.json", (data, status) => @saveProducts(data)
-    
+  
+  saveRecentlyAdded: (json_table) =>
+    useCase.recently_added = json_table.map (product) -> product.id
+    console.log(useCase.recently_added)
+  
+  downloadRecentlyAdded: =>
+    $.getJSON "/recently_added.json", (data, status) => @saveRecentlyAdded(data)
+
   saveCart: (json_table) =>
-    console.log(json_table)
     useCase.cart = json_table.map (product) -> new Product(product.id, product.name, product.description, product.price, product.category_id)
   downloadCart: =>
     $.getJSON "/cart.json", (data, status) => @saveCart(data)

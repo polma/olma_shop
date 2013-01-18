@@ -16,7 +16,10 @@ class @Glue
     After(@useCase, 'searchForProducts', => @gui.showSearchResults())
 
     #special offers
+    Before(@useCase, 'setupProducts', => @serverStorage.downloadDiscounts())
+    After(@serverStorage, 'saveProducts', => @useCase.setupProducts())
     After(@serverStorage, 'saveDiscounts', => @useCase.setupSpecialOffers())
+    After(@useCase, 'setupSpecialOffers', => @gui.showMain())
     After(@useCase, 'showSpecialOffers', => @gui.showSpecialOffers())
 
     #showing cart

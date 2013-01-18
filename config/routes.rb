@@ -12,4 +12,5 @@ OlmaShop::Application.routes.draw do
   match 'cart/del/:id' => "carts#del"
   match 'cart/confirm' => "carts#confirm"
   match 'discounts.json' => "products#discounts"
+  match 'recently_added.json' => "products#recently_added"
 end

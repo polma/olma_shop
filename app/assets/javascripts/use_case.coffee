@@ -7,14 +7,16 @@ class @UseCase
     @special_offers = []
     @discounts = []
     @cart = []
+    @recently_added = []
   
   showCategories: ->
   showCategory: (id) ->
 
   showSpecialOffers: ->
-
+  
   showProducts: ->
   showProduct: (id) ->
+  setupProducts: ->
 
   showCart: ->
   confirmCart: ->

@@ -5,9 +5,10 @@ class @Shop
     serverStorage = new ServerStorage()
     gui = new Gui()
     glue = new Glue(useCase, gui, serverStorage)
+    serverStorage.downloadRecentlyAdded()
     useCase.showCategories()
     useCase.showProducts()
-    serverStorage.downloadDiscounts()
+    #serverStorage.downloadDiscounts()
     #useCase.setupSpecialOffers()
     serverStorage.downloadCart()
 
