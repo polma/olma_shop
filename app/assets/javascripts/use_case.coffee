@@ -70,6 +70,8 @@ class @UseCase
     for discount in @discounts
       product = @findProduct(discount.product_id)
       product.price *= (100-discount.percentage)/100
+      product.name += " (-" + discount.percentage
+      product.name += "%!)"
       @special_offers.push product
 
 
