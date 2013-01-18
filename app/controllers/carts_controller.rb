@@ -57,10 +57,11 @@ class CartsController < ApplicationController
     @cart.save
 
     address = params['address'] 
-    fieldIds = ['name', 'surname', 'email', 'phone', 'street', 'house_nr', 'postal_code', 'city']
+    fieldIds = ['name', 'surname', 'email', 'phone', 'street', 'house_nr', 'postal_code', 'city', 'newsletter']
     
     fieldIds.each do |f|
       @customer[f] = address[f]
+      cookies[f] = address[f]
     end
 
     @customer.save

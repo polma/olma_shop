@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require jquery.json-2.3.min
+//= require jquery.cookie
 //= require uuid
 //= require underscore
 //= require sugar-1.3.min

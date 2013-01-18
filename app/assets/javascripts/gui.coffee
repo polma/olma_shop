@@ -8,6 +8,8 @@ class @Gui
   showCategories: =>
     $("#categories-nav").append('<li>
       <a href="#" onClick="useCase.showSpecialOffers()"><i>Promocje</i></a></li>')
+    $("#categories-nav").append('<li>
+      <a href="#" onClick="useCase.showMain()"><i>Nowości</i></a></li>')
     template = @getTemplate("#category-list-template")
     for c in useCase.categories
       $("#categories-nav").append(template(c))
@@ -54,6 +56,9 @@ class @Gui
   showConfirmationForm: ->
     template = @getTemplate("#confirmation-form-template")
     $("#main-content").html(template)
+    fieldIds = ['name', 'surname', 'email', 'phone', 'street', 'house_nr', 'postal_code', 'city']
+    $("#confirmation-"+field).val($.cookie(field)) for field in fieldIds
+    $("#confirmation-newsletter").prop("checked", $.cookie("newsletter"))
 
   showCartConfirmed: ->
     $("#main-content").empty()

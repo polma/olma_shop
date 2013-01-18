@@ -44,7 +44,8 @@ class @UseCase
     @address = {}
     for field in fieldIds
       @address[field] = @getFieldText('confirmation-'+field)
-    console.log(@address)  
+    @address['newsletter'] = $("#confirmation-newsletter").is(":checked") ? true : false
+    console.log(@address)
 
   searchForProducts: (text) ->
     if text==''
