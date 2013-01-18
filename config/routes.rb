@@ -2,6 +2,7 @@ OlmaShop::Application.routes.draw do
   devise_for :users
 
   mount RailsAdmin::Engine => '/olma', :as => 'rails_admin'
+  mount JasmineRails::Engine => "/specs" unless Rails.env.production?
 
   root :to => "shop#index"
   resources :products
