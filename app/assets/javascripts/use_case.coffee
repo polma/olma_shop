@@ -33,7 +33,9 @@ class @UseCase
   showMain: ->
 
   addProductToCart: (id) ->
-    @cart.push @findProduct(id)
+    cartProduct = $.extend(true, {}, @findProduct(id))
+    cartProduct['size'] = $("#size-select").val()
+    @cart.push cartProduct
   deleteProductFromCart: (id) ->
     @cart.splice($.inArray(@findProduct(id), @cart), 1)
 

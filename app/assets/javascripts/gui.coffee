@@ -31,7 +31,13 @@ class @Gui
     template = @getTemplate("#product-template")
     p = useCase.findProduct(id)
     p.price /= 100.0
-    $("#main-content").html(template(p))
+    options = ""
+    if p.sizes.length > 0
+      options = '<p>Rozmiar: <select style="width:60px" id="size-select">'
+      options += "<option>"+size.name+"</option>" for size in p.sizes
+      options += "</select></p>"
+    console.log(options)
+    $("#main-content").html(template({product: p, options: options }))
     p.price *= 100.0
 
   showCart: ->

@@ -1,7 +1,11 @@
 class ProductsController < ApplicationController
   def index
+    p = Product.all
+    p.each do |t|
+      t['sizes'] = t.sizes
+    end
     respond_to do |t|
-      t.json { render :json => Product.all }
+      t.json { render :json => p }
     end
   end
   def discounts

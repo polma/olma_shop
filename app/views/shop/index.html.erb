@@ -23,20 +23,21 @@
 </script>
 <script type='text/x-handlebars-template' id='product-template'>
   <div class="span5">
-  <h2>{{this.name}}</h2>
-  <p><small>{{this.description}}</small></p>
+  <h2>{{product.name}}</h2>
+  <p><small>{{product.description}}</small></p>
 
-  <p>Cena: {{this.price}} PLN.</p>
+  <p>Cena: {{product.price}} PLN.</p>
+  {{{ options }}}
   <br />
   <br />
-  <button id="button-add-to-cart" class="btn btn-primary" onclick="useCase.addProductToCart({{this.id}})">Dodaj do koszyka</button>
+  <button id="button-add-to-cart" class="btn btn-primary" onclick="useCase.addProductToCart({{product.id}})">Dodaj do koszyka</button>
 </div>
 <div class="span4">
   GALERIA
 </div>
 </script>
 <script type='text/x-handlebars-template' id='cart-list-template'>
-  <div class="span3">{{this.name}}</div>
+  <div class="span3">{{this.name}} (rozmiar {{this.size}})</div>
   <div class="span6"><button id="button-delete-from-cart" class="btn btn-danger" onclick="useCase.deleteProductFromCart({{this.id}})"><i class="icon-remove icon-white" />Usuń z koszyka</button></div>
 </script>
 <script type='text/x-handlebars-template' id='cart-min-template'>
